@@ -1,0 +1,10 @@
+@import 'variables';
+
+h1 {
+  font-size: 1rem;
+  color: $red-color;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  font-weight: 100;
+}
