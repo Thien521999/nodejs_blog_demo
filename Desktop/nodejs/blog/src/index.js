@@ -13,6 +13,13 @@ const __dirname = path.dirname(__filename);
 
 app.use(express.static(path.join(__dirname, "public")));
 
+//duoi dang form HTML thì có  middleware xu ly tu form
+app.use(express.urlencoded({ extended: true }));
+// duoi dang gui tu javascript len
+app.use(express.json());
+
+// XMLHttpRequest, fetch, axios
+
 // HTTP logger
 app.use(morgan("combined"));
 
@@ -30,6 +37,17 @@ app.get("/news", (req, res) => {
   res.render("news");
 });
 
+app.get("/search", (req, res) => {
+  res.render("search");
+});
+
+app.post("/search", (req, res) => {
+  console.log(req.body);
+
+  res.send("");
+});
+
+// ---
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
